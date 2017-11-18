@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>获取信息</p>
+		<button onclick=show();>点击获取</button>
+		<table border="" id="demo3_table">
+			
+		</table>
+	</body>
+	<script type="text/javascript">
+	    function show(){
+	    	var xmlhttp;
+	    	if(window.XMLHttpRequest){
+	    		xmlhttp = new XMLHttpRequest();
+	    	}else{
+	    		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	    	}
+	    	xmlhttp.open("GET","模拟数据集/cd.xml",true);
+	    	xmlhttp.onreadystatechange = function(){
+	    		if(xmlhttp.readyState == 4 && xmlhttp.status ==200){
+	    			chuliXml(this);
+	    		}
+	    	}
+	    	xmlhttp.send();
+	    }
+	    function chuliXml(xml){
+	    	var xmlDoc = xml.responseXML;//xml.responseText 是cd.xml文件
+	    	var cd = xmlDoc.getElementsByTagName("cd");//cd
+	    	var table = "<tr><th>姓名</th><th>年龄</th><th>籍贯</th></tr>";
+	    	for(var i = 0, len = cd.length; i < len; i++){
+	    		table += "<tr><td>"+
+		    		cd[i].getElementsByTagName("name")[0].childNodes[0].nodeValue
+		    		+"</td><td>"+
+		    		cd[i].getElementsByTagName("age")[0].childNodes[0].nodeValue
+		    		+"</td><td>"+
+		    		cd[i].getElementsByTagName("come")[0].childNodes[0].nodeValue
+		    		+"</td></tr>";
+	    	}
+	    	document.getElementById("demo3_table").innerHTML = table;
+	    }
+	</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>在输入框输入字母A</p>
+		输入：<input type="text" onkeyup=show(this.value); /><br>
+		得到信息：<div id="dedao"></div>
+		<script type="text/javascript">
+			var dedao = document.getElementById("dedao");
+			function show(value){
+				var xmlhttp;
+				if(dedao.length == 0){
+					dedao.innerHTML = "";
+					return;
+				}
+				if(window.XMLHttpRequest){
+					xmlhttp = new XMLHttpRequest();
+				}else{
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.open("GET","模拟数据集/demo2.php?q="+value,true);
+				xmlhttp.onreadystatechange = function(){
+					if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+						dedao.innerHTML = xmlhttp.responseText;
+					}
+				}
+				xmlhttp.send();
+			}
+		</script>
+	</body>
+</html>
