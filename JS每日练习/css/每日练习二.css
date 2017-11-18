@@ -1,0 +1,17 @@
+section[class=panel-body-three],
+section[class=panel-body-three]:before,
+section[class=panel-body-three]:after{
+	display: table;
+	content: "";
+}
+section[class=panel-body-three]:after{
+	clear: both;
+}
+ul[class=panel-body] li{
+	margin-top:20px;
+	border:1px solid #46B8DA;
+}
+li{
+	margin-top:20px;
+	border:1px solid #46B8DA;
+}

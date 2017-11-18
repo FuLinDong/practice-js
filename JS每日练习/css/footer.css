@@ -1,0 +1,10 @@
+footer[class=footer]{
+	padding: 2em;
+	text-align: center;
+	font-family:"微软雅黑";
+	font-size: 1em;
+	font-style: normal;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #555555;
+}

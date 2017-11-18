@@ -1,0 +1,21 @@
+section{
+	width:80%;
+	margin: 30px auto;
+	border: 1px solid #4F6F7D;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0 0 5px #CCCCCC;
+	border-bottom: 10px solid #E7EFF1;
+	background-color: #FFFFFF;
+}
+section:nth-of-type(1){
+	border-radius:5px;
+}
+section:nth-of-type(1) h3{
+	margin: 30px 0 80px 20px;
+	font-size: 1.5em;
+	color: #8C98A7;
+}
+section:nth-of-type(1) h3:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}

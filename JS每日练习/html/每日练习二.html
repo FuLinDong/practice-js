@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS每日练习二</title>
+		<link rel="stylesheet" type="text/css" href="../css/每日练习二.css"/>
+		<script type="text/javascript" src="../js/每日练习二.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+		
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript" src="../js/public.js" ></script>
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript" src="../js/header.js" ></script>
+	    <article class="panel">
+	    	<article class="panel-body">
+	    		<section class="panel-body-one" id="sec_lx_one">
+	    			<h4>1、函数传参 一个参数 </h4>
+	    			<button class="btn btn-warning">背景变黄</button>
+	    			<button class="btn btn-danger" >背景变红</button>
+	    			<button class="btn btn-default">背景变黑</button>
+	    			<button class="btn btn-primary">恢复原样</button>
+	    			<p>定义函数的参数为color，变量adiv的样式调用参数color，onclick事件把背景颜色的值传给参数color。</p>
+	    		</section>
+	    		<section class="panel-body-two">
+	    			<h4>2、函数传参 两个参数 </h4>
+	    			<div class="btn-group-vertical">
+	    				<button class="btn btn-default">背景变窄</button>
+		    			<button class="btn btn-warning">背景变黄</button>
+		    			<button class="btn btn-primary">背景变高</button>
+		    			<button class="btn btn-info">恢复原样</button>
+	    			</div>
+	    			
+                    <p>定义函数的参数为name和value，变量bdiv的样式的属性名用参数name代替，
+                    	属性值用参数value代替，onclick事件把样式的属性名和值分别传给参数name和value。</p>
+	    		</section>
+	    		<section class="panel-body-three">
+	    			<h4>3、函数传参 参数加变量</h4>
+	    		    <div class="form-group row 	">
+	    		    	<div class="col-sm-4 col-sm-offset-1">
+	    		    		<input type="text" class="form-control" value="你拍一 我拍一"/>
+	    		    	</div>
+	    		    	<div class="col-sm-2">
+	    		    		<button class="btn btn-default">改变文字</button>
+	    		    	</div>
+	    		    	<div class="col-sm-2">
+	    		    		<button class="btn btn-info">添加title属性(鼠标经过)</button>
+	    		    	</div>
+	    		    </div>
+                    <p>定义函数的参数为name，定义变量a为参数name，两个onclick事件分别绑定标签属性调用参数的值。(暂时不知道为什么要把参数定义成变量，但是这样也行的通。)</p>
+	    		</section>
+	    		<section class="panel-body-four">
+	    			<h4>4、修改样式 通过调取className</h4>
+	    			<div class="btn-group">
+	    				<button class="btn btn-primary">变红&nbsp;变高&nbsp;变窄</button>
+	    				<button class="btn btn-default">恢复原样</button>
+	    			</div>
+	    		</section>
+	    		<section class="panel-body-five">
+	    			<em>记录</em>
+	    			<p>
+                                               函数传参：参数就是占位符<br/>
+
+                        <mark>方括号操作属性</mark>：当要修改的属性不固定的时候，就用<mark>方括号</mark>来操作。只要是可以用.的地方，都可以用方括号来表示。<br/>
+
+                                                通过style，操作的只能是<mark>行间样式</mark>。无论是读还是写。<br/>
+
+                                                样式的<mark>优先级</mark>：*（通配符）标签 class Id 行间，如果先修改了行间，再修改class就会失败。因为优先级。所以对于一个元素，要么只修改行间，要么只修改class，不能混着来。
+	    		    </p>
+	    		</section>
+	    	</article>
+	    </article>
+	    <script type="text/javascript" src="../js/footer.js" ></script>
+	</body>
+</html>

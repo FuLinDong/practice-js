@@ -1,0 +1,79 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>无标题文档</title>  
+</head>  
+  
+<body>  
+<div id="outDiv" style="display:block;width:100px; height:100px;padding:50px;background-color:#060;">  
+    <div id="inDiv" style="display:block;width:100px; height:100px; background-color:#FFF;"></div>  
+</div>  
+  
+<a id="link" href="http://www.jask.cn" target="_blank">Jask</a>  
+  
+<script>  
+    /*
+        *组织对象的事件,更符合网页的产品需求
+        *比如点击A只要在页面内跳转位置,不需要跳转页面,则需要拦截事件流进行阻止
+        *比如点击一个全选按钮,要选择所有的列表项,则要进行事件冒泡捕获列表的整个父div然后选中
+     * */
+    //事件传播  
+    /* 
+        当事件目标是Window对象或其他一些单独对象时，浏览器简单地通过调用对象上适当的处理程序响应事件， 
+        当目标对象是文档或文档元素时，大部分事件都会“冒泡”到DOM树根，调用目标的父元素的事件处理程序，然后调用在目标祖父元素上注册的事件处理程序，一直到Domcument对象上，最后到达Window对象。  
+         
+        注意：focus blur scroll事件除外其它的大部分事件都会冒泡 
+    */    
+    var outDiv = document.getElementById("outDiv");  
+    var inDiv = document.getElementById("inDiv");  
+    var links = document.getElementById("link");  
+    //第三个参数是false是这个冒泡的执行顺序是从内到外，反之，从外到内执行；  
+    //DOMContentLoaded 这个相当于load  
+    window.addEventListener("click",function(){alert("load");},false);    
+    inDiv.addEventListener("click",function(event){
+    	alert("inDiv");
+        event.stopPropagation();
+        event.cancelBubble = true;
+    },false);
+    outDiv.addEventListener("click",function(event){alert("outDiv");          
+        //这个是组织向上冒泡的IE8之前的不支持  
+        //停止向上冒泡执行window中的属性click  
+        //event.stopPropagation();    //标准   
+        //event.cancelBubble = true;  //IE        
+    },false);  
+      
+    //取消默认操作，也就是默认事件，在这里是取消了一个a连接属性href的地址，设置了，就取消了打开www.jask.cn的页面，  
+    //点击这个连接是一个默认打开新面的事件所以是默认操作  
+    //如 submit 也有他的默认操作  
+    links.addEventListener("click",function(event){  
+        event.preventDefault(); //标准  
+        //event.returnValue = false //IE          
+        //return false; //用于处理使用对象属性注册的处理程序   
+    },false);  
+      
+    //事件传播和默认操作是二个不同的机制，  
+    //一个是向上冒泡 一个是执行默认操作  
+    
+    addEventListener();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>  
+  
+</body>  
+</html> 
